@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Agency - Start Bootstrap Theme</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!--Boostrap CSS-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+          body {
+            background-color: #f9f9f9;
+            font-family: 'Montserrat', sans-serif;
+          }
+          .quiz-container {
+            max-width: 800px;
+            margin: 60px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(5, 44, 75, 0.1);
+            border: 2px solid #052c4b;
+          }
+          .question { 
+            display: none;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background-color: #f3f0ed;
+            border-left: 4px solid #04a7cb;
+          }
+          .question.active { 
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+          }
+          .form-label {
+            color: #052c4b;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            display: block;
+          }
+          .form-check {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: white;
+            transition: all 0.3s ease;
+          }
+          .form-check:hover {
+            background-color: #f3f0ed;
+            transform: translateX(5px);
+          }
+          .form-check-input {
+            border-color: #04a7cb;
+          }
+          .form-check-input:checked {
+            background-color: #04a7cb;
+            border-color: #04a7cb;
+          }
+          .form-check-label {
+            color: #052c4b;
+            font-weight: 500;
+          }
+          .form-control {
+            border: 2px solid #052c4b;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 15px;
+          }
+          .form-control:focus {
+            border-color: #04a7cb;
+            box-shadow: 0 0 0 0.25rem rgba(4, 167, 203, 0.25);
+          }
+          @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          .btn-xl {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+          }
+          .btn-xl:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(4, 167, 203, 0.3);
+          }
+        </style>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: #f2f0ed; padding: 10px 0; transition: transform 0.3s ease-in-out;">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top"><img src="images/pilot_logo.png" alt="Pilot Logo" style="height: 150px;" /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#quiz">Quiz</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead" style="padding-top: 300px;">
+            <div class="container">
+                <div class="masthead-subheading">We Build Funnels That Print Money for Your Business.</div>
+                <div class="masthead-heading text-uppercase">The Last "Agency" You'll Ever Need. Period. </div>
+                <a class="btn btn-xl text-uppercase" href="#quiz" style="background-color: #04a7cb; color: white; border: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1); font-weight: 600; padding: 1rem 2rem;">
+                  Take the 30-Second Quiz
+                </a>
+                
+                              </div>
+        </header>
+        <section class="page-section pb-2" id="advertorial">
+            <div class="container">
+              <div class="text-center">
+                <h2 class="section-heading text-uppercase">Why 90% of Agencies Burn Your Cash—And What We Do Differently After Managing $9M+ in Monthly Ad Spend</h2>
+                <h3 class="section-subheading text-muted">If you're tired of marketing that looks good but doesn't sell, this might be
+                    the most profitable thing you read all year.
+                </h3>
+              </div>
+              <div class="row">
+                <div class="col-lg-10 mx-auto">
+                  <p class="lead">
+                   Let's face it—most marketing agencies are glorified slot machines. You put money in, pull the lever, hope something comes out.
+                   And when it doesn't? "It's the algorithm." "Your offer needs work." "Let's test some more creative." Come on. 
+                  </p>
+                  <p class="lead">
+                  That's not marketing. That's guessing. 
+                </p>
+                  <p class="lead">
+                    After helping to manage over $9 million in monthly ad spend across multiple platforms, I can tell you one thing with certainty:
+                    <strong>the only marketing that matters is marketing that makes money.</strong> If you can't tie it to a sale, a lead, or a booked appointment—
+                    it's fluff. Plain and simple.
+                  </p>
+                  <p class="lead">
+                    What we do is different. We don't chase likes. We don't run "brand awareness." We engineer <strong>profit-first marketing systems
+                        that bring in clients.</strong> Period. We know what works, and we execute it relentlessly. Not because it's trendy—but because it drives revenue.
+                    And at the end of the day, that's the only metric that matters. 
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        <!-- Services-->
+        <section class="page-section pb-3" id="services" style="margin-top: -50px;">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Services</h2>
+                    <h3 class="section-subheading text-muted">Digital Marketing Solutions That Convert</h3>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x" style="color: #052c4b;"></i> <!-- background circle -->
+                            <i class="fa-solid fa-person-rays fa-stack-1x" style="color: #04a7cb;"></i> <!-- icon -->
+                          </span>                                                  
+                        <h4 class="my-3">Lead Generation</h4>
+                        <p class="text-muted">We don't get "traffic." We get buyers. Our lead gen systems bring in high-quality, 
+                            ready-to-buy prospects—so your calendar stays full and your sales team stays busy.></p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x" style="color: #052c4b;"></i> <!-- background circle -->
+                            <i class="fa-solid fa-filter fa-stack-1x" style="color: #04a7cb;"></i> <!-- icon -->
+                          </span>   
+                        <h4 class="my-3">Funnel Design</h4>
+                        <p class="text-muted">We build funnels that sell whhile you sleep. From first click to final conversion, we design frictionless journeys that turn strangers into paying customers.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x" style="color: #052c4b;"></i> <!-- background circle -->
+                            <i class="fa-solid fa-envelope-open-text fa-stack-1x" style="color: #04a7cb;"></i> <!-- icon -->
+                          </span> 
+                        <h4 class="my-3">Email + SMS</h4>
+                        <p class="text-muted">Money's in the follow-up. We set up automated email + SMS sequences that re-engage 
+                            leads, recover lost sales, and keep your brand top-of-mind, 24/7.  </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section" id="sound-familiar">
+            <div class="container">
+              <div class="text-center mb-5">
+                <h2 class="section-heading text-uppercase">Sound familiar?</h2>
+              </div>
+              <div class="row">
+                <div class="col-lg-10 mx-auto">
+                  <p class="lead">
+                    Let's be honest. You didn't start your business to become a part-time media buyer, funnel hacker, or landing page therapist.
+                  </p>
+          
+                  <p class="lead">And yet…</p>
+          
+                  <ul class="lead">
+                    <li>You've burned cash on ad agencies that overpromise and underdeliver.</li>
+                    <li>You've tried freelancers who: ghosted mid-launch.</li>
+                    <li>You've had to write your own copy, build your own funnels, and duct-tape it all together on YouTube tutorials.</li>
+                  </ul>
+          
+                  <p class="lead">
+                    And for what? A couple of leads who ghost you? A bunch of "clicks" with no sales?
+                  </p>
+          
+                  <p class="lead">
+                    <strong>That's not marketing. That's madness.</strong>
+                  </p>
+                  <section class="page-section" id="quiz" style="margin-top: -50px;">
+                    <div class="container">
+                      <div class="text-center mb-5">
+                        <h2 class="section-heading text-uppercase"><strong>Take the 30-Second Quiz!</strong></h2>
+                        <h3 class="section-subheading text-muted">See if your business is a fit for our client-getting system—and what we'd do to scale it.</h3>
+                      </div>
+                  
+
+                      <!-- Paste all 7 questions and the final contact info form here -->
+                      <!DOCTYPE html>
+                      <html lang="en">
+                      <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>30-Second Quiz</title>
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+                        <style>
+                          body {
+                            background-color: #f9f9f9;
+                            font-family: Arial, sans-serif;
+                          }
+                          .quiz-container {
+                            max-width: 600px;
+                            margin: 60px auto;
+                            background: white;
+                            padding: 30px;
+                            border-radius: 10px;
+                            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+                          }
+                          .question { display: none; }
+                          .question.active { display: block; }
+                        </style>
+                      </head>
+                      <body>
+                        <div class="quiz-container">
+                      
+                          <form id="quizForm">
+                            <div class="question active">
+                              <label class="form-label">1. What kind of business do you run?</label>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" value="Coaching / Consulting" required>
+                                <label class="form-check-label">Coaching / Consulting</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" value="Service Business">
+                                <label class="form-check-label">Service Business (Marketing, Creative, etc.)</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" value="Local Business">
+                                <label class="form-check-label">Local Business (Gym, Chiropractor, etc.)</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" value="Ecommerce / DTC">
+                                <label class="form-check-label">Ecommerce / DTC</label>
+                              </div>
+                              <input type="text" class="form-control mt-2" placeholder="If other, type here...">
+                            </div>
+                      
+                            <div class="question">
+                              <label class="form-label">2. Where's your business at right now?</label>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2" value="Just starting out" required>
+                                <label class="form-check-label">Just starting out</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2" value="$5k–$20k/month">
+                                <label class="form-check-label">$5k–$20k/month</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2" value="$20k–$100k/month">
+                                <label class="form-check-label">$20k–$100k/month</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2" value="$100k+/month">
+                                <label class="form-check-label">$100k+/month</label>
+                              </div>
+                            </div>
+                      
+                            <div class="question">
+                              <label class="form-label">3. What's the #1 thing holding you back right now?</label>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3" value="I need more qualified leads" required>
+                                <label class="form-check-label">I need more qualified leads</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3" value="My funnel / site isn't converting">
+                                <label class="form-check-label">My funnel / site isn't converting</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3" value="I'm wasting money on ads">
+                                <label class="form-check-label">I'm wasting money on ads</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3" value="I don't have a system to scale">
+                                <label class="form-check-label">I don't have a system to scale</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3" value="Not sure — I just want help">
+                                <label class="form-check-label">Not sure — I just want help</label>
+                              </div>
+                            </div>
+                      
+                            <div class="question">
+                              <label class="form-label">4. Have you run paid ads before?</label>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q4" value="Yes, with an agency" required>
+                                <label class="form-check-label">Yes, with an agency</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q4" value="Yes, by myself">
+                                <label class="form-check-label">Yes, by myself</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q4" value="I've tried, didn't get results">
+                                <label class="form-check-label">I've tried, didn't get results</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q4" value="No, never">
+                                <label class="form-check-label">No, never</label>
+                              </div>
+                            </div>
+                      
+                            <div class="question">
+                              <label class="form-label">5. Do you have a sales team or are you the closer?</label>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q5" value="I close all deals myself" required>
+                                <label class="form-check-label">I close all deals myself</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q5" value="I have 1-2 salespeople">
+                                <label class="form-check-label">I have 1-2 salespeople</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q5" value="I have a full sales team">
+                                <label class="form-check-label">I have a full sales team</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q5" value="I don't sell — it's all website/conversion based">
+                                <label class="form-check-label">I don't sell — it's all website/conversion based</label>
+                              </div>
+                            </div>
+                      
+                            <div class="question">
+                              <label class="form-label">6. How soon are you looking to scale?</label>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q6" value="Yesterday" required>
+                                <label class="form-check-label">Yesterday</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q6" value="This month">
+                                <label class="form-check-label">This month</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q6" value="Next 2-3 months">
+                                <label class="form-check-label">Next 2-3 months</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q6" value="Just researching for now">
+                                <label class="form-check-label">Just researching for now</label>
+                              </div>
+                            </div>
+                      
+                            <div class="question">
+                              <label class="form-label">7. If we could help you build a system that brings in real results every month, are you ready to take action?</label>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q7" value="Yes, I'm ready" required>
+                                <label class="form-check-label">Yes, I'm ready</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q7" value="Depends on the offer">
+                                <label class="form-check-label">Depends on the offer</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q7" value="Maybe, I need more info">
+                                <label class="form-check-label">Maybe, I need more info</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q7" value="Not right now">
+                                <label class="form-check-label">Not right now</label>
+                              </div>
+                            </div>
+                      
+                            <div class="question">
+                              <p class="lead">Great — based on your answers, we can help!🚀</p>
+                              <p>Just drop your info below, and we'll show you exactly how we'd grow your business.</p>
+                              <input type="text" class="form-control mb-2" placeholder="Your Name" required>
+                              <input type="email" class="form-control mb-2" placeholder="Your Email" required>
+                              <input type="tel" class="form-control mb-3" placeholder="Your Phone Number" required>
+                              <button type="submit" class="btn btn-xl text-uppercase w-100" style="background-color: #04a7cb; color: #052c4b; border: none;" id="submitButton">
+                                <span class="button-text">Get My Custom Plan</span>
+                                <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                              </button>
+                            </div>
+                          </form>
+                        </div>
+                      
+                        <script>
+                          const form = document.getElementById('quizForm');
+                          const questions = document.querySelectorAll('.question');
+                          const submitButton = document.getElementById('submitButton');
+                          const buttonText = submitButton.querySelector('.button-text');
+                          const spinner = submitButton.querySelector('.spinner-border');
+                          let currentStep = 0;
+                          let formData = {};
+
+                          // Phone number formatting function
+                          function formatPhoneNumber(value) {
+                            if (!value) return value;
+                            const phoneNumber = value.replace(/[^\d]/g, '');
+                            const phoneNumberLength = phoneNumber.length;
+                            
+                            if (phoneNumberLength < 4) return phoneNumber;
+                            if (phoneNumberLength < 7) {
+                              return `${phoneNumber.slice(0, 3)}-${phoneNumber.slice(3)}`;
+                            }
+                            return `${phoneNumber.slice(0, 3)}-${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
+                          }
+
+                          // Add event listener for phone number input
+                          const phoneInput = document.querySelector('input[type="tel"]');
+                          phoneInput.addEventListener('input', function(e) {
+                            const formattedNumber = formatPhoneNumber(e.target.value);
+                            e.target.value = formattedNumber;
+                          });
+
+                          form.addEventListener('submit', function(e) {
+                            e.preventDefault();
+                            
+                            // Show loading state
+                            submitButton.disabled = true;
+                            buttonText.textContent = 'Processing...';
+                            spinner.classList.remove('d-none');
+
+                            // Collect all form data
+                            formData = {
+                              name: document.querySelector('input[placeholder="Your Name"]').value,
+                              email: document.querySelector('input[type="email"]').value,
+                              phone: document.querySelector('input[type="tel"]').value,
+                              businessType: document.querySelector('input[name="q1"]:checked').value,
+                              businessStage: document.querySelector('input[name="q2"]:checked').value,
+                              mainChallenge: document.querySelector('input[name="q3"]:checked').value,
+                              adExperience: document.querySelector('input[name="q4"]:checked').value,
+                              salesTeam: document.querySelector('input[name="q5"]:checked').value,
+                              timeline: document.querySelector('input[name="q6"]:checked').value,
+                              actionReadiness: document.querySelector('input[name="q7"]:checked').value
+                            };
+
+                            // Send data to Google Sheet
+                            fetch('https://script.google.com/macros/s/AKfycbzoIGEtNJOmk4JYz8-fAqwnUAF43UjzRmxmone6Vt3oRUYgM53UxRB-FrO94NgGSuaEtQ/exec', {
+                              method: 'POST',
+                              mode: 'no-cors',
+                              headers: {
+                                'Content-Type': 'application/json',
+                              },
+                              body: JSON.stringify(formData)
+                            })
+                            .then(() => {
+                              window.location.href = "thank-you.html";
+                            })
+                            .catch(error => {
+                              console.error('Error:', error);
+                              // Restore button state
+                              submitButton.disabled = false;
+                              buttonText.textContent = 'Get My Custom Plan';
+                              spinner.classList.add('d-none');
+                              // Still redirect even if there's an error
+                              window.location.href = "thank-you.html";
+                            });
+                          });
+
+                          form.addEventListener('change', function(e) {
+                            const activeQuestion = questions[currentStep];
+
+                            // Don't auto-advance on the last question (email/phone capture)
+                            if (currentStep === questions.length - 1) return;
+
+                            const selected = activeQuestion.querySelector('input[type=radio]:checked');
+                            if (selected) {
+                              questions[currentStep].classList.remove('active');
+                              currentStep++;
+                              if (currentStep < questions.length) {
+                                questions[currentStep].classList.add('active');
+                              }
+                            }
+                          });
+                        </script>
+                      </body>
+                      </html>
+                    </form>
+                  </section>
+                  
+                    </a>
+                  </div>
+                  
+                  
+                </div>
+              </div>
+            </div>
+          </section>
+          
+        <!-- Contact-->
+        <section class="page-section" id="contact" style="margin-top: -50px;">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Contact Us</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- * * SB Forms Contact Form * *-->
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- This form is pre-integrated with SB Forms.-->
+                <!-- To make this form functional, sign up at-->
+                <!-- https://startbootstrap.com/solution/contact-forms-->
+                <!-- to get an API token!-->
+                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <!-- Name input-->
+                                <input class="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Email address input-->
+                                <input class="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
+                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            </div>
+                            <div class="form-group mb-md-0">
+                                <!-- Phone number input-->
+                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                <!-- Message input-->
+                                <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Submit success message-->
+                    <!---->
+                    <!-- This is what your users will see when the form-->
+                    <!-- has successfully submitted-->
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center text-white mb-3">
+                            <div class="fw-bolder">Form submission successful!</div>
+                            To activate this form, sign up at
+                            <br />
+                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                        </div>
+                    </div>
+                    <!-- Submit error message-->
+                    <!---->
+                    <!-- This is what your users will see when there is-->
+                    <!-- an error submitting the form-->
+                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                    <!-- Submit Button-->
+                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
+                </form>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2023</div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Portfolio Modals-->
+        <!-- Portfolio item 1 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Threads
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Illustration
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 2 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Explore
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Graphic Design
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 3 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Finish
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Identity
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 4 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Lines
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Branding
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 5 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Southwest
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Website Design
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 6 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..." />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Client:</strong>
+                                            Window
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            Photography
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>60-Second Quiz</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+    }
+    .quiz-container {
+      max-width: 600px;
+      margin: 60px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+    .question { display: none; }
+    .question.active { display: block; }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h2 class="text-center mb-4">🚀 Take the 60-Second Quiz</h2>
+
+    <form id="quizForm">
+      <div class="question active">
+        <label class="form-label">1. What kind of business do you run?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q1" value="Coaching / Consulting" required>
+          <label class="form-check-label">Coaching / Consulting</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q1" value="Service Business">
+          <label class="form-check-label">Service Business (Marketing, Creative, etc.)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q1" value="Local Business">
+          <label class="form-check-label">Local Business (Gym, Chiropractor, etc.)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q1" value="Ecommerce / DTC">
+          <label class="form-check-label">Ecommerce / DTC</label>
+        </div>
+        <input type="text" class="form-control mt-2" placeholder="If other, type here...">
+      </div>
+
+      <div class="question">
+        <label class="form-label">2. Where’s your business at right now?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q2" value="Just starting out" required>
+          <label class="form-check-label">Just starting out</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q2" value="$5k–$20k/month">
+          <label class="form-check-label">$5k–$20k/month</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q2" value="$20k–$100k/month">
+          <label class="form-check-label">$20k–$100k/month</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q2" value="$100k+/month">
+          <label class="form-check-label">$100k+/month</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label class="form-label">3. What’s the #1 thing holding you back right now?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q3" value="I need more qualified leads" required>
+          <label class="form-check-label">I need more qualified leads</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q3" value="My funnel / site isn’t converting">
+          <label class="form-check-label">My funnel / site isn’t converting</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q3" value="I’m wasting money on ads">
+          <label class="form-check-label">I’m wasting money on ads</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q3" value="I don’t have a system to scale">
+          <label class="form-check-label">I don’t have a system to scale</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q3" value="Not sure — I just want help">
+          <label class="form-check-label">Not sure — I just want help</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label class="form-label">4. Have you run paid ads before?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q4" value="Yes, with an agency" required>
+          <label class="form-check-label">Yes, with an agency</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q4" value="Yes, by myself">
+          <label class="form-check-label">Yes, by myself</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q4" value="I’ve tried, didn’t get results">
+          <label class="form-check-label">I’ve tried, didn’t get results</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q4" value="No, never">
+          <label class="form-check-label">No, never</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label class="form-label">5. Do you have a sales team or are you the closer?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q5" value="I close all deals myself" required>
+          <label class="form-check-label">I close all deals myself</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q5" value="I have 1-2 salespeople">
+          <label class="form-check-label">I have 1-2 salespeople</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q5" value="I have a full sales team">
+          <label class="form-check-label">I have a full sales team</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q5" value="I don’t sell — it’s all website/conversion based">
+          <label class="form-check-label">I don’t sell — it’s all website/conversion based</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label class="form-label">6. How soon are you looking to scale?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q6" value="Yesterday" required>
+          <label class="form-check-label">Yesterday</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q6" value="This month">
+          <label class="form-check-label">This month</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q6" value="Next 2-3 months">
+          <label class="form-check-label">Next 2-3 months</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q6" value="Just researching for now">
+          <label class="form-check-label">Just researching for now</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label class="form-label">7. If we could help you build a system that brings in real results every month, are you ready to take action?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q7" value="Yes, I’m ready" required>
+          <label class="form-check-label">Yes, I’m ready</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q7" value="Depends on the offer">
+          <label class="form-check-label">Depends on the offer</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q7" value="Maybe, I need more info">
+          <label class="form-check-label">Maybe, I need more info</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q7" value="Not right now">
+          <label class="form-check-label">Not right now</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p class="lead">Great — based on your answers, we can help.</p>
+        <p>Just drop your info below, and we’ll show you exactly how we’d grow your business.</p>
+        <input type="text" class="form-control mb-2" placeholder="Your Name" required>
+        <input type="email" class="form-control mb-2" placeholder="Your Email" required>
+        <input type="tel" class="form-control mb-3" placeholder="Your Phone Number" required>
+        <button type="submit" class="btn btn-success w-100">Get My Custom Plan</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('quizForm');
+    const questions = document.querySelectorAll('.question');
+    let currentStep = 0;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      window.location.href = "thank-you.html";
+    });
+
+    form.addEventListener('change', function(e) {
+      const activeQuestion = questions[currentStep];
+
+      // Don't auto-advance on the last question (email/phone capture)
+      if (currentStep === questions.length - 1) return;
+
+      const selected = activeQuestion.querySelector('input[type=radio]:checked');
+      if (selected) {
+        questions[currentStep].classList.remove('active');
+        currentStep++;
+        if (currentStep < questions.length) {
+          questions[currentStep].classList.add('active');
+        }
+      }
+    });
+  </script>
+  <script>
+    const phoneInput = document.querySelector('input[type="tel"]');
+    phoneInput.addEventListener('input', function (e) {
+      let digits = e.target.value.replace(/\D/g, '').substring(0, 10);
+      let formatted = '';
+  
+      if (digits.length > 6) {
+        formatted = `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`;
+      } else if (digits.length > 3) {
+        formatted = `${digits.slice(0, 3)}-${digits.slice(3)}`;
+      } else {
+        formatted = digits;
+      }
+  
+      e.target.value = formatted;
+    });
+  </script>
+  
+</body>
+</html>
