@@ -70,3 +70,52 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+// Contact form handling
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const submitButton = document.getElementById('submitButton');
+    const successMessage = document.getElementById('submitSuccessMessage');
+    const errorMessage = document.getElementById('submitErrorMessage');
+    
+    // Disable button and show loading state
+    submitButton.disabled = true;
+    submitButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+    
+    // Get form data
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        message: document.getElementById('message').value,
+        type: 'contact'
+    };
+
+    // Send to Google Sheet
+    fetch('https://script.google.com/macros/s/AKfycbzoIGEtNJOmk4JYz8-fAqwnUAF43UjzRmxmone6Vt3oRUYgM53UxRB-FrO94NgGSuaEtQ/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(() => {
+        // Show success message
+        successMessage.classList.remove('d-none');
+        errorMessage.classList.add('d-none');
+        // Reset form
+        document.getElementById('contactForm').reset();
+    })
+    .catch(() => {
+        // Show error message
+        errorMessage.classList.remove('d-none');
+        successMessage.classList.add('d-none');
+    })
+    .finally(() => {
+        // Reset button state
+        submitButton.disabled = false;
+        submitButton.innerHTML = 'Send Message';
+    });
+});
