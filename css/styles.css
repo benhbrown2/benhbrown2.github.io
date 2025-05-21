@@ -1,3 +1,7 @@
+   /* Ensure bold text inside .lead is actually bold */
+   .lead b, .lead strong {
+    font-weight: 700 !important;
+  }
 @charset "UTF-8";
 /*!
 * Start Bootstrap - Agency v7.0.12 (https://startbootstrap.com/theme/agency)

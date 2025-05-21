@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Thank You - Product Pilot Agency</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!--Boostrap CSS-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <!-- Calendly widget styles -->
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+        <style>
+          body {
+            background-color: #f9f9f9;
+            font-family: 'Montserrat', sans-serif;
+          }
+          .thank-you-container {
+            max-width: 800px;
+            margin: 200px auto 100px;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(5, 44, 75, 0.1);
+            border: 2px solid #052c4b;
+            text-align: center;
+          }
+          .checkmark {
+            color: #04a7cb;
+            font-size: 4rem;
+            margin-bottom: 20px;
+          }
+          .step-confirmation {
+            background-color: #f3f0ed;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: left;
+          }
+          .step-confirmation h4 {
+            color: #052c4b;
+            margin-bottom: 20px;
+          }
+          .trust-builder {
+            background-color: #e8f5f7;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+          }
+          .trust-builder h4 {
+            color: #052c4b;
+            margin-bottom: 20px;
+          }
+          .testimonial {
+            font-style: italic;
+            color: #052c4b;
+            margin: 20px 0;
+            padding: 20px;
+            border-left: 4px solid #04a7cb;
+          }
+          .expect-list {
+            text-align: left;
+            margin: 20px 0;
+          }
+          .expect-list li {
+            margin-bottom: 15px;
+            color: #052c4b;
+          }
+          .urgency-note {
+            color: #dc3545;
+            font-weight: 600;
+            margin: 20px 0;
+          }
+          .btn-xl {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background-color: #04a7cb;
+            color: white;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            font-weight: 600;
+            margin: 20px 0;
+          }
+          .btn-xl:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(4, 167, 203, 0.3);
+            background-color: #0390af;
+            color: white;
+          }
+          .video-container {
+            margin: 30px 0;
+            border-radius: 10px;
+            overflow: hidden;
+          }
+          .credibility-line {
+            font-weight: 600;
+            color: #052c4b;
+            margin: 20px 0;
+          }
+          .calendly-container {
+            margin: 30px 0;
+            min-height: 600px;
+          }
+        </style>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: #f2f0ed; padding: 10px 0;">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="images/pilot_logo.png" alt="Pilot Logo" style="height: 150px;" /></a>
+            </div>
+        </nav>
+
+        <!-- Thank You Section-->
+        <section class="page-section">
+            <div class="container">
+                <div class="thank-you-container">
+                    <i class="fas fa-check-circle checkmark"></i>
+                    <h2 class="section-heading text-uppercase mb-5">✅ Thanks for Taking the Quiz – You're Almost There</h2>
+                    <h4 class="mb-4"><em>🎯 Based on Your Answers, Here's What's Possible...</em></h4>
+                    <p class="lead mb-3" style="font-size:1.3rem;">If you're doing less than $10k/mo, scaling has never been more important. With the right offer, tracking, and follow-up in place, we can typically generate <b>10-15 high quality leads</b> per month for businesses at your level.</p>
+                    <p class="lead">Book a free 15-minute strategy call to map out your numbers. <span style="font-style: italic;">No strings attached.</span> <span style="font-size: 1.5rem;">➜</span></p>
+                    <p class="lead" style="font-size: 1.5rem; font-weight: bold; font-style: italic;">We'll hold your spot for</p>
+                    <div id="countdown" style="font-size: 2rem; font-weight: bold; color: #04a7cb;"></div>
+                    <script>
+                        function startCountdown(duration, display) {
+                            var timer = duration, minutes, seconds;
+                            var countdownInterval = setInterval(function () {
+                                minutes = parseInt(timer / 60, 10);
+                                seconds = parseInt(timer % 60, 10);
+                                minutes = minutes < 10 ? "0" + minutes : minutes;
+                                seconds = seconds < 10 ? "0" + seconds : seconds;
+                                display.textContent = minutes + ":" + seconds;
+                                if (--timer < 0) {
+                                    clearInterval(countdownInterval);
+                                    display.textContent = "Time's up!";
+                                }
+                            }, 1000);
+                        }
+                        window.onload = function () {
+                            var eightMinutesAndThirtySeconds = 8 * 60 + 30,
+                                display = document.querySelector('#countdown');
+                            startCountdown(eightMinutesAndThirtySeconds, display);
+                        };
+                    </script>
+
+                    <div class="calendly-container" id="booking-section">
+                        <!-- Calendly inline widget begin -->
+                        <div class="calendly-inline-widget" data-url="https://calendly.com/productpilot/15min" style="min-width:320px;height:600px;"></div>
+                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                        <!-- Calendly inline widget end -->
+                    </div>
+
+                    <div class="video-container">
+                        <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/a08c4f11db46467abeda3f221424a168?sid=54d92db0-a217-4178-9e9e-9178aeaf59e7" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                    </div>
+
+                    <a href="#booking-section" class="btn btn-xl text-uppercase" style="background-color: #04a7cb;" onclick="document.getElementById('booking-section').scrollIntoView({behavior: 'smooth'}); return false;">
+                        Book Free Strategy Call
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; Product Pilot Agency 2024</div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a class="link-dark text-decoration-none me-3" href="#">Privacy Policy</a>
+                        <a class="link-dark text-decoration-none" href="#">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html> 
